@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PTA 会員管理システム
 
-## Getting Started
+## **前提**
 
-First, run the development server:
+- ユーザー：管理者（PTA や習い事の組織の役員）、会員（保護者）
+- 対象組織：PTA
+- アクセス権限：
+  - 管理者：会員情報およびシステム全般の管理権限を持つ
+  - 会員：自身の情報の登録・編集・削除および、管理者からのメールに返信可能
+- 画面構成：
+  - 管理者画面：会員および管理者の情報管理、連絡配信機能
+  - 会員画面：会員による自己情報の管理
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## **機能**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 【管理者画面】
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+#### 1. 会員管理
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- 会員の登録（子どもの情報も含む）
+- 会員の編集
+- 会員の削除
+- 会員の検索
+- 会員のフィルター
 
-## Learn More
+#### 2. 管理者管理
 
-To learn more about Next.js, take a look at the following resources:
+- 管理者の登録
+- 管理者の編集
+- 管理者の削除
+- 管理者のログイン・ログアウト
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### 3. 連絡管理
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- メール配信
+- テンプレート機能
+- 配信履歴
+- リスト作成（学年やクラス、役職などでリストを作成）
 
-## Deploy on Vercel
+#### 4. 返信管理
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- 会員からのメール返信を管理画面上で確認し、必要に応じて返信対応が可能
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+#### 5. リッチテキストエディタと PDF 配信
+
+- リッチテキストエディタを使用してブログのように情報を編集
+- 作成した内容を PDF 化し、会員に配信
+
+#### 6. アンケート管理
+
+- アンケートを外部 SaaS と連携して配信
+- リンクを会員に配布し、回答を収集・管理
+
+### **【会員画面】**
+
+#### 1. 自己情報管理
+
+- 自己情報の登録（子どもの情報も含む）
+- 自己情報の編集
+- 自己情報の削除
+
+#### 2. 連絡返信
+
+- 管理者からのメールに対して返信が可能
